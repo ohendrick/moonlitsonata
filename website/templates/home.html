@@ -1,26 +1,66 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<div class="calculator">
-  <div class="div1"> Display </div>
-  <div class="div2"> AC </div>
-  <div class="div3"> ± </div>
-  <div class="div4"> % </div>
-  <div class="div5"> / </div>
-  <div class="div6"> 7 </div>
-  <div class="div7"> 8 </div>
-  <div class="div8"> 9 </div>
-  <div class="div9"> * </div>
-  <div class="div10"> 4</div>
-  <div class="div11"> 5 </div>
-  <div class="div12"> 6</div>
-  <div class="div13"> - </div>
-  <div class="div14"> 1</div>
-  <div class="div15"> 2</div>
-  <div class="div16"> 3</div>
-  <div class="div17"> + </div>
-  <div class="div18"> 0 </div>
-  <div class="div19"> , </div>
-  <div class="div20"> = </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+
+
+<div id="calculator" align="center">
+
+    <div>
+        <input id="screen" value="0"><br>
+    </div>
+
+    <div>
+        <button onclick="processNumberButton(this.innerHTML)">1</button>
+        <button onclick="processNumberButton(this.innerHTML)">2</button>
+        <button onclick="processNumberButton(this.innerHTML)">3</button>
+        <button onclick="processOperatorButton(this.innerHTML)" class="operator">+</button>
+    </div>
+
+    <div>
+        <button onclick="processNumberButton(this.innerHTML)">4</button>
+        <button onclick="processNumberButton(this.innerHTML)">5</button>
+        <button onclick="processNumberButton(this.innerHTML)">6</button>
+        <button onclick="processOperatorButton(this.innerHTML)" class="operator">-</button>
+    </div>
+
+    <div>
+        <button onclick="processNumberButton(this.innerHTML)">7</button>
+        <button onclick="processNumberButton(this.innerHTML)">8</button>
+        <button onclick="processNumberButton(this.innerHTML)">9</button>
+        <button onclick="processOperatorButton(this.innerHTML)" class="operator">/</button>
+    </div>
+
+    <div>
+        <button onclick="processNumberButton(this.innerHTML)">0</button>
+        <button onclick="processDecimalButton(this.innerHTML)">.</button>
+        <button onclick="processPercentageButton(this.innerHTML)">%</button>
+        <button onclick="processOperatorButton(this.innerHTML)" class="operator">x</button>
+    </div>
+
+    <div>
+        <button onclick="processNumberButton(this.innerHTML)">00</button>
+        <button onclick="processParenthesesButton(this.innerHTML)">(</button>
+        <button onclick="processParenthesesButton(this.innerHTML)">)</button>
+        <button onclick="processOperatorButton(this.innerHTML)" class="operator">^</button>
+    </div>
+
+    <div>
+        <button onclick="processResetButton()" class="reset">C</button>
+        <button onclick="processEqualsButton()" class="eval">=</button>
+    </div>
+
 </div>
+
+
+<script src="{{url_for('static', filename='js/simplecalculator.js')}}"></script>
+
+</body>
+</html>
 {% endblock %}
