@@ -1,23 +1,18 @@
 .moonboard {
+  background-image: url("/static/images/mypic.png");
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   background-color: #2196F3;
-  padding: 10px;
-}
-.hole {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+  padding: 2px;
 }
 
-.led {
+button {
+    background: transparent;
+}
+
+
+button.led {
   background-color: rgba(255, 200, 210, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
 }
 </style>
 </head>
